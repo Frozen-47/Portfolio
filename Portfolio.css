@@ -1,0 +1,253 @@
+h1 {
+    color: #bd0000;
+    font-size: 2em;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+    body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-image: url(Images/Background.jpg);
+    background-size: cover;
+    color: #222;
+}
+header {
+    padding: 0px;
+    text-align: center;
+}
+.nav {
+
+    position: sticky;
+    top: 10px;
+}
+.d1,
+.d2 {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.d1 {
+    justify-content: right;
+
+}
+.d2 {
+    justify-content: center;
+}
+.d1 li {
+    font-family: 'Arial', sans-serif;
+    padding: 10px;
+    background-color: #4c4c4c;
+    border-radius: 50px;
+
+}
+nav ul.d1 li a {
+    color: #bd0000;
+
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.2s;
+
+}
+nav ul.d1 li a:hover,.d1 li:hover {
+
+    color: #000000;
+    background-color: #bd0000;
+}
+#about,
+#projects,
+#contact {
+    margin-left: 2cm;
+
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 100%;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+}
+#about h2,
+#projects h2,
+#contact h2 {
+    color: #000;
+    margin-top: 0;
+}
+#about p {
+    width: 70%;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    text-align: justify;
+
+}
+#projects ul {
+    padding-left: 1.2rem;
+}
+#projects li {
+    margin-bottom: 0.7rem;
+}
+#projects a {
+    color: #bd0000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: text-decoration 0.2s;
+}
+#projects a:hover {
+    color: #000000;
+}
+#contact ul.d2 {
+    padding: 0;
+    margin: 1rem 0 0 0;
+}
+#contact ul.d2 li a img {
+    vertical-align: middle;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(33, 147, 176, 0.08);
+    transition: cubic-bezier(1, 0, 0, 1);
+    justify-content: center;
+}
+#contact ul.d2 li a img:hover {
+    transform: scale(1.15);
+}
+#projects {
+    margin-right: 30%;
+}
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+}
+.tl {
+    text-decoration: none;
+    color: black;
+}
+.tl:hover {
+    color: #bd0000;
+}
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.4em;
+        padding: 0 10px;
+    }
+
+    #about p {
+        width: 100%;
+    }
+
+    .d1,
+    .d2 {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        padding: 0;
+    }
+
+    .d1 {
+        justify-content: center;
+    }
+
+    .d1 li,
+    .d2 li {
+        width: 90%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    header {
+        padding: 16px 5px;
+    }
+
+    #about,
+    #projects,
+    #contact {
+        margin-left: 0;
+        max-width: 98vw;
+        padding: 1rem 0.5rem;
+    }
+
+    #contact ul.d2 {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+}
+.form {
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+
+    header {
+
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    main {
+        max-width: 600px;
+        margin: 20px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+
+        color: #000;
+    }
+
+    p {
+
+        color: #555;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    input,
+    textarea {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input:hover,
+    textarea:hover {
+        border-color: #bd0000;
+    }
+
+    button {
+        padding: 10px;
+        background-color: #000;
+        color: #b82e2e;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #bd0000;
+        color: #000;
+    }
+
+    footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.9em;
+        color: #777;
+    }
+}
