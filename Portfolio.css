@@ -123,6 +123,10 @@ footer {
     color: #bd0000;
 }
 @media (max-width: 600px) {
+    body{
+         background-image: url(Images/mobilebackground.jpg);
+         background-size: cover;
+    }
     h1 {
         font-size: 1.4em;
         padding: 0 10px;
