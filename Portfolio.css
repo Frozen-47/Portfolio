@@ -5,97 +5,130 @@ h1 {
     font-family: 'Arial', sans-serif;
     font-weight: bold;
 }
-    body {
+
+body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background-image: url(Images/Background.jpg);
     background-size: cover;
     color: #222;
 }
+
 header {
     padding: 0px;
     text-align: center;
 }
-.nav {
 
+.nav {
     position: sticky;
     top: 10px;
 }
-.d1,
-.d2 {
+
+.d1, .d2 {
     list-style: none;
     display: flex;
     gap: 20px;
 }
+
 .d1 {
     justify-content: right;
-
 }
+
 .d2 {
     justify-content: center;
 }
+
 .d1 li {
     font-family: 'Arial', sans-serif;
     padding: 10px;
     background-color: #4c4c4c;
     border-radius: 50px;
-
 }
+
 nav ul.d1 li a {
     color: #bd0000;
-
     font-weight: 500;
     font-size: 1.1rem;
     text-decoration: none;
     transition: color 0.2s;
-
 }
-nav ul.d1 li a:hover,.d1 li:hover {
 
+nav ul.d1 li a:hover,
+.d1 li:hover {
     color: #000000;
     background-color: #bd0000;
 }
+
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.about-text {
+    flex: 2;
+    min-width: 250px;
+}
+
+.about-image img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
 #about,
 #projects,
 #contact {
     margin-left: 2cm;
-
     padding: 2rem;
     border-radius: 12px;
     max-width: 100%;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
 }
+
 #about h2,
 #projects h2,
 #contact h2 {
     color: #000;
     margin-top: 0;
 }
+
 #about p {
     width: 70%;
     line-height: 1.6;
     font-size: 1.1rem;
     text-align: justify;
-
 }
+
 #projects ul {
     padding-left: 1.2rem;
 }
+
 #projects li {
     margin-bottom: 0.7rem;
 }
+
 #projects a {
     color: #bd0000;
     text-decoration: none;
     font-weight: 500;
     transition: text-decoration 0.2s;
 }
+
 #projects a:hover {
     color: #000000;
 }
+
 #contact ul.d2 {
     padding: 0;
     margin: 1rem 0 0 0;
 }
+
 #contact ul.d2 li a img {
     vertical-align: middle;
     border-radius: 50%;
@@ -103,30 +136,38 @@ nav ul.d1 li a:hover,.d1 li:hover {
     transition: cubic-bezier(1, 0, 0, 1);
     justify-content: center;
 }
+
 #contact ul.d2 li a img:hover {
     transform: scale(1.15);
 }
+
 #projects {
     margin-right: 30%;
 }
+
 footer {
     text-align: center;
     margin-top: 20px;
     font-size: 0.9em;
     color: #777;
 }
+
 .tl {
     text-decoration: none;
     color: black;
 }
+
 .tl:hover {
     color: #bd0000;
 }
+
+/* 📱 Mobile Responsive Styles */
 @media (max-width: 600px) {
-    body{
-         background-image: url(Images/mobilebackground.jpg);
-         background-size: cover;
+    body {
+        background-image: url(Images/mobilebackground.jpg);
+        background-size: cover;
     }
+
     h1 {
         font-size: 1.4em;
         padding: 0 10px;
@@ -136,8 +177,7 @@ footer {
         width: 100%;
     }
 
-    .d1,
-    .d2 {
+    .d1, .d2 {
         flex-direction: row;
         gap: 10px;
         align-items: center;
@@ -148,8 +188,7 @@ footer {
         justify-content: center;
     }
 
-    .d1 li,
-    .d2 li {
+    .d1 li, .d2 li {
         width: 90%;
         text-align: center;
         padding: 10px 0;
@@ -172,7 +211,22 @@ footer {
         gap: 10px;
         align-items: center;
     }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text {
+        text-align: justify;
+    }
+
+    .about-image img {
+        margin-top: 10px;
+    }
 }
+
+/* Form Page Styling (Optional) */
 .form {
     body {
         font-family: Arial, sans-serif;
@@ -182,7 +236,6 @@ footer {
     }
 
     header {
-
         color: #fff;
         text-align: center;
         padding: 10px 0;
@@ -202,12 +255,10 @@ footer {
     }
 
     h2 {
-
         color: #000;
     }
 
     p {
-
         color: #555;
     }
 
