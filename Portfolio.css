@@ -232,6 +232,10 @@ footer {
     .d1 {
         justify-content: center;
     }
+    .d1 li:hover {
+    background-color: #bd0000;
+    transform: scale(1.05);
+}
 
     .nav {
         position: unset;
