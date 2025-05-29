@@ -3,7 +3,7 @@ h1 {
     font-size: 2em;
     text-align: center;
     font-family: 'Arial', sans-serif;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 body {
@@ -21,9 +21,11 @@ header {
 .nav {
     position: sticky;
     top: 10px;
+    justify-content: space-around;
 }
 
-.d1, .d2 {
+.d1,
+.d2 {
     list-style: none;
     display: flex;
     gap: 20px;
@@ -56,6 +58,7 @@ nav ul.d1 li a:hover,
 .d1 li:hover {
     color: #000000;
     background-color: #bd0000;
+    transform: scale(1.25);
 }
 
 
@@ -80,14 +83,20 @@ nav ul.d1 li a:hover,
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+.about-image img:hover {
+    transform: scale(1.05);
+    transition-duration: 0.5s;
+}
+
 
 #about,
 #projects,
+#certifications,
 #contact {
     margin-left: 2cm;
     padding: 2rem;
     border-radius: 12px;
-    max-width: 100%;
+
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
 }
 
@@ -98,29 +107,34 @@ nav ul.d1 li a:hover,
     margin-top: 0;
 }
 
+
 #about p {
-    width: 70%;
+    width: 90%;
     line-height: 1.6;
     font-size: 1.1rem;
     text-align: justify;
 }
 
-#projects ul {
+#projects ul,
+#certifications ul {
     padding-left: 1.2rem;
 }
 
-#projects li {
+#projects li,
+#certifications li {
     margin-bottom: 0.7rem;
 }
-
-#projects a {
+#about a,
+#projects a,
+#certifications a {
     color: #bd0000;
     text-decoration: none;
     font-weight: 500;
     transition: text-decoration 0.2s;
 }
-
-#projects a:hover {
+#about a:hover,
+#projects a:hover,
+#certifications a:hover {
     color: #000000;
 }
 
@@ -139,6 +153,7 @@ nav ul.d1 li a:hover,
 
 #contact ul.d2 li a img:hover {
     transform: scale(1.15);
+    transition-duration: 0.5s;
 }
 
 #projects {
@@ -160,8 +175,14 @@ footer {
 .tl:hover {
     color: #bd0000;
 }
+.email{
+    color: #bd0000;
+}
+.email:hover {
+    color: #000000;
+}
 
-/* 📱 Mobile Responsive Styles */
+
 @media (max-width: 600px) {
     body {
         background-image: url(Images/mobilebackground.jpg);
@@ -169,7 +190,7 @@ footer {
     }
 
     h1 {
-        font-size: 1.4em;
+        font-size: 1.6em;
         padding: 0 10px;
     }
 
@@ -177,8 +198,9 @@ footer {
         width: 100%;
     }
 
-    .d1, .d2 {
-        flex-direction: row;
+    .d1,
+    .d2 {
+        flex-direction: column;
         gap: 10px;
         align-items: center;
         padding: 0;
@@ -187,8 +209,14 @@ footer {
     .d1 {
         justify-content: center;
     }
+    .nav {
+    position:unset;
 
-    .d1 li, .d2 li {
+}
+
+
+    .d1 li,
+    .d2 li {
         width: 90%;
         text-align: center;
         padding: 10px 0;
@@ -200,6 +228,7 @@ footer {
 
     #about,
     #projects,
+    #certifications,
     #contact {
         margin-left: 0;
         max-width: 98vw;
@@ -226,7 +255,6 @@ footer {
     }
 }
 
-/* Form Page Styling (Optional) */
 .form {
     body {
         font-family: Arial, sans-serif;
@@ -243,6 +271,7 @@ footer {
 
     h1 {
         margin: 0;
+      
     }
 
     main {
