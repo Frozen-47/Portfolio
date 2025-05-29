@@ -157,7 +157,8 @@ header {
     margin: 1rem 0 0 0;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 25px;
+    
 }
 
 #contact ul.d2 li a img {
@@ -172,9 +173,6 @@ header {
 }
 
 
-#projects {
-    margin-right: 30%;
-}
 
 
 footer {
