@@ -23,6 +23,10 @@ header {
     top: 10px;
     justify-content: space-around;
 }
+nav ul.d1 li a {
+    transition: all 0.3s ease;
+}
+
 
 .d1,
 .d2 {
@@ -177,9 +181,13 @@ footer {
 }
 .email{
     color: #bd0000;
+    text-decoration: none;
 }
 .email:hover {
     color: #000000;
+}
+html {
+    scroll-behavior: smooth;
 }
 
 
