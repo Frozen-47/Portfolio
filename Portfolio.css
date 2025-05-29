@@ -194,13 +194,8 @@ footer {
     color: #bd0000;
 }
 
-.email {
-    color: #bd0000;
+.link{
     text-decoration: none;
-}
-
-.email:hover {
-    color: #000000;
 }
 
 
