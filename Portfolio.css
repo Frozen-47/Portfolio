@@ -225,17 +225,19 @@ footer {
         gap: 10px;
         align-items: center;
     }
+
     .d2 {
-         flex-direction: row;
+        flex-direction: row;
     }
 
     .d1 {
         justify-content: center;
     }
+
     .d1 li:hover {
-    background-color: #bd0000;
-    transform: scale(1.05);
-}
+        background-color: #bd0000;
+        transform: scale(1.05);
+    }
 
     .nav {
         position: unset;
@@ -259,6 +261,11 @@ footer {
         margin-left: 0;
         max-width: 98vw;
         padding: 1rem 0.5rem;
+    }
+
+    #projects ul,
+    #certifications ul {
+        padding-left: 2rem;
     }
 
     .about-container {
