@@ -225,6 +225,9 @@ footer {
         gap: 10px;
         align-items: center;
     }
+    .d2 {
+         flex-direction: row;
+    }
 
     .d1 {
         justify-content: center;
