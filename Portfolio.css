@@ -158,7 +158,7 @@ header {
     display: flex;
     justify-content: center;
     gap: 25px;
-    
+
 }
 
 #contact ul.d2 li a img {
@@ -192,8 +192,15 @@ footer {
     color: #bd0000;
 }
 
-.link{
+.link {
+    display: inline-block;
     text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.link:hover {
+    transform: scale(1.6);
+
 }
 
 
@@ -230,6 +237,7 @@ footer {
     .d1 li:hover {
         background-color: #bd0000;
         transform: scale(1.05);
+
     }
 
     .nav {
