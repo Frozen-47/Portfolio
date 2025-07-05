@@ -12,7 +12,7 @@ body {
 }
 
 h1 {
-    color: #bd0000;
+    color: #010101;
     font-size: 2em;
     text-align: center;
     font-family: 'Arial', sans-serif;
@@ -52,19 +52,19 @@ header {
 .d1 li {
     font-family: 'Arial', sans-serif;
     padding: 10px 20px;
-    background-color: #4c4c4c;
+    background-color: #cbcbcb;
     border-radius: 50px;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 .d1 li:hover {
-    background-color: #bd0000;
+    background-color: #000;
     transform: scale(1.13);
 }
 
 .d1 li a {
-    color: #bd0000;
+    color: #000;
     font-weight: 500;
     font-size: 1.1rem;
     text-decoration: none;
@@ -72,7 +72,7 @@ header {
 }
 
 .d1 li:hover a {
-    color: #000000;
+    color: #fff;
 }
 
 
@@ -105,16 +105,18 @@ header {
 
 
 #about,
+#learning,
 #projects,
 #certifications,
 #contact {
     margin-left: 2cm;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+
 }
 
 #about h2,
+#learning h2,
 #projects h2,
 #contact h2 {
     color: #000;
@@ -128,25 +130,29 @@ header {
 }
 
 #projects ul,
+#learning ul,
 #certifications ul {
     padding-left: 1.2rem;
 }
 
 #projects li,
+#learning li,
 #certifications li {
     margin-bottom: 0.7rem;
 }
 
 #about a,
 #projects a,
+#learning a,
 #certifications a {
-    color: #bd0000;
+    color: #00B;
     text-decoration: none;
     font-weight: 500;
     transition: text-decoration 0.2s;
 }
 
 #about a:hover,
+#learning a:hover,
 #projects a:hover,
 #certifications a:hover {
     color: #000000;
@@ -189,7 +195,7 @@ footer {
 }
 
 .tl:hover {
-    color: #bd0000;
+    color: #00008B;
 }
 
 .link {
@@ -235,7 +241,7 @@ footer {
     }
 
     .d1 li:hover {
-        background-color: #bd0000;
+        background-color: #00008B;
         transform: scale(1.05);
 
     }
@@ -257,6 +263,7 @@ footer {
 
     #about,
     #projects,
+    #learning,
     #certifications,
     #contact {
         margin-left: 0;
@@ -265,6 +272,7 @@ footer {
     }
 
     #projects ul,
+    #learning ul,
     #certifications ul {
         padding-left: 2rem;
     }
@@ -333,7 +341,7 @@ footer {
 
 .form input:hover,
 .form textarea:hover {
-    border-color: #bd0000;
+    border-color: #00008B;
 }
 
 .form button {
@@ -346,7 +354,7 @@ footer {
 }
 
 .form button:hover {
-    background-color: #bd0000;
+    background-color: #00008B;
     color: #000;
 }
 
