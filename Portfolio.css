@@ -106,6 +106,8 @@ header {
 
 #about,
 #learning,
+#websites,
+#compilers,
 #projects,
 #certifications,
 #contact {
@@ -117,6 +119,8 @@ header {
 
 #about h2,
 #learning h2,
+#websites h2,
+#compilers h2,
 #projects h2,
 #contact h2 {
     color: #000;
@@ -131,18 +135,24 @@ header {
 
 #projects ul,
 #learning ul,
+#websites ul,
+#compilers ul,
 #certifications ul {
     padding-left: 1.2rem;
 }
 
 #projects li,
 #learning li,
+#websites li,
+#compilers li,
 #certifications li {
     margin-bottom: 0.7rem;
 }
 
 #about a,
 #projects a,
+#websites a,
+#compilers a,
 #learning a,
 #certifications a {
     color: #00B;
@@ -153,6 +163,8 @@ header {
 
 #about a:hover,
 #learning a:hover,
+#websites a:hover,
+#compilers a:hover,
 #projects a:hover,
 #certifications a:hover {
     color: #000000;
@@ -263,6 +275,8 @@ footer {
 
     #about,
     #projects,
+    #websites,
+    #compilers,
     #learning,
     #certifications,
     #contact {
@@ -273,6 +287,8 @@ footer {
 
     #projects ul,
     #learning ul,
+    #websites ul,
+    #compilers ul,
     #certifications ul {
         padding-left: 2rem;
     }
