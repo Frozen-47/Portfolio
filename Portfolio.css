@@ -27,10 +27,10 @@ header {
 .nav {
     position: sticky;
     top: 10px;
-    justify-content: space-around;
+    transition: top 0.4s ease;
     z-index: 1000;
-    background-color: transparent;
 }
+
 
 .d1,
 .d2 {
@@ -75,7 +75,6 @@ header {
     color: #fff;
 }
 
-
 .about-container {
     display: flex;
     align-items: center;
@@ -103,18 +102,19 @@ header {
     transform: scale(1.05);
 }
 
-
 #about,
 #learning,
 #websites,
 #compilers,
 #projects,
 #certifications,
-#contact {
+#contact,
+#goals,
+#mini-projects,
+#achievements {
     margin-left: 2cm;
     padding: 2rem;
     border-radius: 12px;
-
 }
 
 #about h2,
@@ -122,7 +122,10 @@ header {
 #websites h2,
 #compilers h2,
 #projects h2,
-#contact h2 {
+#contact h2,
+#goals h2,
+#mini-projects h2,
+#achievements h2 {
     color: #000;
     margin-top: 0;
 }
@@ -137,7 +140,10 @@ header {
 #learning ul,
 #websites ul,
 #compilers ul,
-#certifications ul {
+#certifications ul,
+#goals ul,
+#mini-projects ul,
+#achievements ul {
     padding-left: 1.2rem;
 }
 
@@ -145,8 +151,13 @@ header {
 #learning li,
 #websites li,
 #compilers li,
-#certifications li {
+#certifications li,
+#goals li,
+#mini-projects li,
+#achievements li {
     margin-bottom: 0.7rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
 #about a,
@@ -154,11 +165,12 @@ header {
 #websites a,
 #compilers a,
 #learning a,
-#certifications a {
-    color: #00B;
+#certifications a,
+#mini-projects a {
+    color: #00008B;
     text-decoration: none;
     font-weight: 500;
-    transition: text-decoration 0.2s;
+    transition: 0.2s;
 }
 
 #about a:hover,
@@ -166,8 +178,10 @@ header {
 #websites a:hover,
 #compilers a:hover,
 #projects a:hover,
-#certifications a:hover {
-    color: #000000;
+#certifications a:hover,
+#mini-projects a:hover {
+    color: #000;
+    text-decoration: underline;
 }
 
 #contact ul.d2 {
@@ -176,7 +190,6 @@ header {
     display: flex;
     justify-content: center;
     gap: 25px;
-
 }
 
 #contact ul.d2 li a img {
@@ -190,16 +203,12 @@ header {
     transform: scale(1.15);
 }
 
-
-
-
 footer {
     text-align: center;
     margin-top: 20px;
     font-size: 0.9em;
     color: #777;
 }
-
 
 .tl {
     text-decoration: none;
@@ -218,7 +227,6 @@ footer {
 
 .link:hover {
     transform: scale(1.6);
-
 }
 
 
@@ -255,7 +263,6 @@ footer {
     .d1 li:hover {
         background-color: #00008B;
         transform: scale(1.05);
-
     }
 
     .nav {
@@ -279,7 +286,10 @@ footer {
     #compilers,
     #learning,
     #certifications,
-    #contact {
+    #contact,
+    #goals,
+    #mini-projects,
+    #achievements {
         margin-left: 0;
         max-width: 98vw;
         padding: 1rem 0.5rem;
@@ -289,7 +299,10 @@ footer {
     #learning ul,
     #websites ul,
     #compilers ul,
-    #certifications ul {
+    #certifications ul,
+    #goals ul,
+    #mini-projects ul,
+    #achievements ul {
         padding-left: 2rem;
     }
 
@@ -307,6 +320,7 @@ footer {
     }
 }
 
+/* Optional: Styling for your form.html page */
 .form {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
