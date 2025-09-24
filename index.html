@@ -1,175 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sabareesh | Portfolio</title>
-  <link rel="stylesheet" href="Portfolio.css" />
-  <link rel="icon" href="Images/title.png" type="image/png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabareesh - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/1272910357517701147?v=4" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+
+    
 </head>
 
 <body>
-  <header>
-    <h1>Welcome to My Portfolio</h1>
-  </header>
+    <div id="contactModal" class="contact-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeContactModal()">
+                &times;
+            </button>
+            <h2 class="modal-title">Contact Me</h2>
+            <p class="modal-subtitle">
+                Don't hesitate to reach out if you have something interesting or just
+                want to say hi!
+            </p>
 
-  <nav class="nav" id="navbar">
-    <ul class="d1">
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+            <div class="recommended-section">
+                <span class="recommended-label">Recommended!</span>
+                <div class="contact-buttons">
+                    <a href="https://wa.me/917845840747" class="contact-btn" target="_blank">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp"
+                            class="contact-btn-icon" />
+                        WhatsApp
+                    </a>
+                    <a href="https://discord.com/users/1272910357517701147" class="contact-btn" target="_blank">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="Discord"
+                            class="contact-btn-icon" />
+                        Discord
+                    </a>
+                </div>
+            </div>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-container">
-      <div class="about-text">
-        <p>
-          Hi, I’m <strong>Sabareesh</strong> 👋, a computer science student 💻 passionate about software development and cybersecurity 🔐.
-        </p>
-        <p>
-          I have hands-on experience with
-          <a href="https://www.c-language.org/" target="_blank" class="tl"><strong>C</strong></a> 🖥️ and
-          <a href="https://cplusplus.com/" target="_blank" class="tl"><strong>C++</strong></a>. I focus on writing optimized, efficient code.
-        </p>
-        <p>
-          I'm eager to learn, grow, and build impactful real-world solutions. 🚀
-        </p>
-      </div>
-      <div class="about-image">
-        <img src="Images/Sabareesh.jpg" title="Profile image" alt="Profile image" />
-      </div>
+            <div class="other-section">
+                <span class="other-label">Other</span>
+                <div class="other-contacts">
+                    <a href="mailto:sabareeshgm47@gmail.com" class="other-contact-btn" target="_blank">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email"
+                            class="other-contact-btn-icon" />
+                        Email
+                    </a>
+                    <a href="https://x.com/frozenn_47" class="other-contact-btn" target="_blank">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" alt="X"
+                            class="other-contact-btn-icon" />
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <section id="learning">
-    <h2>Learning</h2>
-    <p>Currently learning:</p>
-    <ul>
-      <li><a href="https://www.java.com/" target="_blank" class="tl">Java</a></li>
-      <li><a href="https://www.w3schools.com/html/" target="_blank" class="tl">HTML</a></li>
-      <li><a href="https://www.w3schools.com/css/" target="_blank" class="tl">CSS</a></li>
-      <li><a href="https://www.javascript.com/" target="_blank" class="tl">JavaScript</a></li>
-      <li><a href="https://www.geeksforgeeks.org/dsa/dsa-tutorial-learn-data-structures-and-algorithms/" target="_blank" class="t1">Data Structures and Algorithms</a></li>
-    </ul>
-  </section>
+    <header class="header">
+        <div class="header-container">
+            <div class="profile-section">
+                <img class="avatar" src="https://avatars.githubusercontent.com/u/122569172?v=4"
+                    alt="Sabareesh Avatar" />
+                <div class="profile-info">
+                    <span class="profile-name">Sabareesh</span>
+                    <span class="profile-subtitle">
+                        Available for work
+                        <div class="status-indicator">
+                            <div class="status-dot"></div>
+                            <div class="status-dot"></div>
+                            <div class="status-dot"></div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <button class="contact-me" onclick="openContactModal()">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mail.svg" alt="Contact"
+                    class="contact-me-icon" />
+                Contact Me
+            </button>
+        </div>
+    </header>
 
-  <section id="websites">
-    <h2>Learning Websites</h2>
-    <ul>
-      <li><a href="https://www.w3schools.com/">W3Schools</a></li>
-      <li><a href="https://leetcode.com/">Leetcode</a></li>
-      <li><a href="https://www.geeksforgeeks.org/">GeeksforGeeks</a></li>
-      <li><a href="https://www.hackerrank.com/">HackerRank</a></li>
-      <li><a href="https://www.codechef.com/">CodeChef</a></li>
-    </ul>
-  </section>
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>
+                Hey! I am <span class="name frozen" id="heroName">Frozen</span>, a
+                self taught Computer Science Student!
+            </h1>
+            <p class="subtitle">Computer Science Student</p>
+            <p class="description">
+                Hi, I'm Sabareesh, a computer science student passionate about
+                software development and cybersecurity. I have hands-on experience
+                with <strong>C</strong> and <strong>C++</strong>, focusing on writing
+                optimized, efficient code. I'm eager to learn, grow, and build
+                impactful real-world solutions.
+            </p>
 
-  <section id="compilers">
-    <h2>Online Compilers</h2>
-   <ul>
-      <li>🐍 <a href="https://www.programiz.com/">Programiz</a> – Best for Python practice</li>
-      <li>⚙️ <a href="https://www.onlinegdb.com/">OnlineGDB</a> – Powerful for C/C++ debugging</li>
-      <li>☕ <a href="https://onecompiler.com/">OneCompiler</a> – Great for Java & more</li>
-     <li>🎨 <a href="https://codepen.io/">CodePen</a> – Live frontend playground</li>
-    </ul>
+            <div class="badges">
+                <span class="badge">C</span>
+                <span class="badge">C++</span>
+                <span class="badge">Java</span>
+                <span class="badge available">Available</span>
+            </div>
+        </section>
 
-  </section>
+        <!-- Learning Section -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Currently Learning</h2>
+            </div>
 
-  <section id="goals">
-    <h2>My Goals</h2>
-    <ul>
-      <li>📌 Master Java programming</li>
-      <li>🎯 Build a strong foundation in Java & C++</li>
-      <li>🚀 Land an internship or Zoho opportunity</li>
-      <li>🎓 Finish 10+ tech certifications in 2025</li>
-    </ul>
-  </section>
+            <div class="skills-section">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><a href="project1.html">Project 1</a></li>
-      <li><a href="project2.html">Project 2</a></li>
-      <li><a href="project3.html">Project 3</a></li>
-    </ul>
-  </section>
+                <div class="skill-category">
+                    <h3>Core Concepts</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Data Structures</span>
+                        <span class="skill-tag">Algorithms</span>
+                        <span class="skill-tag">Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="mini-projects">
-    <h2>Mini Projects</h2>
-    <ul>
-      <li>
-        ✅ <strong>Portfolio</strong> – HTML , CSS , JavaScript and Bootstrap
-        <a href="https://frozen-47.github.io/Portfolio/" target="_blank">[Live]</a> |
-        <a href="https://github.com/Frozen-47/Portfolio" target="_blank">[GitHub]</a>
-      </li>
-    
-      <li>
-        ✅ <strong>To-do List</strong> – HTML , CSS and JavaScript  
-        <a href="https://frozen-47.github.io/To-do/" target="_blank">[Live]</a> |
-        <a href="https://github.com/Frozen-47/To-do" target="_blank">[GitHub]</a>
-      </li>
+        <!-- Popular Projects -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Mini Projects</h2>
+                <span class="section-count">3</span>
+            </div>
 
-       <li>
-        ✅ <strong>Teacher's Day Bot</strong> – HTML , CSS and JavaScript  
-        <a href="https://frozen-47.github.io/Chatbot/" target="_blank">[Live]</a> |
-        <a href="https://github.com/Frozen-47/Chatbot" target="_blank">[GitHub]</a>
-      </li>
-      
-    </ul>
-  </section>
+            <div class="projects-grid">
+                <article class="repo-card">
+                    <a href="https://frozen-47.github.io/Portfolio/" class="repo-name">Portfolio</a>
+                    <p class="repo-description">
+                        A modern, responsive portfolio website showcasing my projects and
+                        skills with clean design and smooth animations.
+                    </p>
+                    <div class="repo-meta">
+                        <div class="repo-language">
+                            <span class="language-dot html"></span>
+                            HTML
+                        </div>
+                        <div class="repo-language">
+                            <span class="language-dot css"></span>
+                            CSS
+                        </div>
+                        <div class="repo-language">
+                            <span class="language-dot js"></span>
+                            JavaScript
+                        </div>
+                    </div>
+                    <div class="repo-links">
+                        <a href="https://frozen-47.github.io/Portfolio/" target="_blank" class="repo-link">🔗 Live</a>
+                        <a href="https://github.com/Frozen-47/Portfolio" target="_blank" class="repo-link">📁 Code</a>
+                    </div>
+                </article>
 
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <ul>
-      <li><a href="#">Mindluster</a></li>
-      <li><a href="#">Microsoft</a></li>
-      <li><a href="#">LinkedIn</a></li>
-      <li><a href="#">Infosys</a></li>
-    </ul>
-  </section>
+                <article class="repo-card">
+                    <a href="https://frozen-47.github.io/To-do/" class="repo-name">To-do List</a>
+                    <p class="repo-description">
+                        A clean and intuitive task management application built with HTML,
+                        CSS, and JavaScript for organizing daily activities.
+                    </p>
+                    <div class="repo-meta">
+                        <div class="repo-language">
+                            <span class="language-dot html"></span>
+                            HTML
+                        </div>
+                        <div class="repo-language">
+                            <span class="language-dot css"></span>
+                            CSS
+                        </div>
+                        <div class="repo-language">
+                            <span class="language-dot js"></span>
+                            JavaScript
+                        </div>
+                    </div>
+                    <div class="repo-links">
+                        <a href="https://frozen-47.github.io/To-do/" target="_blank" class="repo-link">🔗 Live</a>
+                        <a href="https://github.com/Frozen-47/To-do" target="_blank" class="repo-link">📁 Code</a>
+                    </div>
+                </article>
 
-  <section id="achievements">
-    <h2>Achievements</h2>
-    <ul>
-      <li>🏆 Microsoft Office Tour 2024 Participant</li>
-      <li>✅ 8 Microsoft Certifications Completed</li>
-    </ul>
-  </section>
+                <article class="repo-card">
+                    <a href="https://frozen-47.github.io/Chatbot/" class="repo-name">Teacher's Day Bot</a>
+                    <p class="repo-description">
+                        An interactive chatbot created for Teacher's Day, built with HTML,
+                        CSS, and JavaScript to celebrate educators.
+                    </p>
+                    <div class="repo-meta">
+                        <div class="repo-language">
+                            <span class="language-dot html"></span>
+                            HTML
+                        </div>
+                        <div class="repo-language">
+                            <span class="language-dot css"></span>
+                            CSS
+                        </div>
+                        <div class="repo-language">
+                            <span class="language-dot js"></span>
+                            JavaScript
+                        </div>
+                    </div>
+                    <div class="repo-links">
+                        <a href="https://frozen-47.github.io/Chatbot/" target="_blank" class="repo-link">🔗 Live</a>
+                        <a href="https://github.com/Frozen-47/Chatbot" target="_blank" class="repo-link">📁 Code</a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Want to get in touch? Click it<a href="form.html" class="link"> 🔗</a></p>
-    <ul class="d2">
-      <li><a href="https://www.linkedin.com/in/sabareesh47" target="_blank"><img src="Images/linkedin.png" width="25" alt="LinkedIn" /></a></li>
-      <li><a href="https://leetcode.com/u/Sabareesh_47/" target="_blank"><img src="Images/leetcode.png" width="25" alt="LeetCode" /></a></li>
-      <li><a href="https://github.com/Frozen-47" target="_blank"><img src="Images/github.png" width="25" alt="GitHub" /></a></li>
-      <li><a href="https://x.com/frozenn_47" target="_blank"><img src="Images/twitter.png" width="25" alt="X" /></a></li>
-      <li><a href="mailto:sabareeshgm47@gmail.com" target="_blank"><img src="Images/gmail.png" width="25" alt="Mail" /></a></li>
-    </ul>
-  </section>
+        <!-- Achievements -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Achievements</h2>
+            </div>
 
-  <footer>
-    <p>&copy; 2025 Sabareesh. All rights reserved.</p>
-  </footer>
+            <ul class="goals-list">
+                <li class="goal-item">
+                    <span class="goal-emoji">🏆</span>
+                    <span class="goal-text">Microsoft Office Tour 2024 Participant</span>
+                </li>
+                <li class="goal-item">
+                    <span class="goal-emoji">✅</span>
+                    <span class="goal-text">8 Microsoft Certifications Completed</span>
+                </li>
+            </ul>
+        </section>
 
+        <!-- Goals -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">My Goals</h2>
+            </div>
 
-  <script>
-    let lastScrollTop = 0;
-    const navbar = document.getElementById("navbar");
+            <ul class="goals-list">
+                <li class="goal-item">
+                    <span class="goal-text">Master Java programming and object-oriented design
+                        principles</span>
+                </li>
+                <li class="goal-item">
+                    <span class="goal-text">Build a strong foundation in Java & C++ for competitive
+                        programming and systems development</span>
+                </li>
+                <li class="goal-item">
+                    <span class="goal-text">Land an internship or Zoho opportunity in software
+                        development</span>
+                </li>
+                <li class="goal-item">
+                    <span class="goal-text">Finish 10+ tech certifications in 2025 across multiple
+                        domains</span>
+                </li>
+            </ul>
+        </section>
 
-    window.addEventListener("scroll", function () {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop > lastScrollTop) {
-        navbar.style.top = "-80px";
-      } else {
-        navbar.style.top = "10px"; 
-      }
-      lastScrollTop = scrollTop;
-    });
-  </script>
+        <!-- Exploring Opportunities -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">Exploring Opportunities</h2>
+            </div>
+
+            <p style="color: #8d96a0; font-size: 13px; line-height: 1.4">
+                I'm actively researching and working on open source projects, while
+                exploring internships, job opportunities, and anything that helps me
+                grow as a developer.
+            </p>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact-section">
+            <h2 class="contact-title">Let's build something great together</h2>
+            <p class="contact-description">
+                Whether you're looking to collaborate on a project, need a developer
+                for your team, or just want to connect and chat about tech, I'm always
+                excited to meet new people and explore new opportunities.
+            </p>
+
+            <div class="contact-links">
+                <button class="contact-link" onclick="openContactModal()">
+                    Connect With Me
+                </button>
+            </div>
+
+            <div style="margin-top: 16px">
+                <ul class="social-icons">
+                    <li>
+                        <a href="https://www.linkedin.com/in/sabareesh47" target="_blank" title="LinkedIn">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn"
+                                class="social-icon" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://leetcode.com/u/Sabareesh_47/" target="_blank" title="LeetCode">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/leetcode.svg" alt="LeetCode"
+                                class="social-icon" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/Frozen-47" target="_blank" title="GitHub">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub"
+                                class="social-icon" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://x.com/frozenn_47" target="_blank" title="X (Twitter)">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" alt="X (Twitter)"
+                                class="social-icon" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">
+            Built by Sabareesh. Find me on
+            <strong><a href="https://discord.com/users/1272910357517701147" target="_blank"
+                    class="resume-link">Discord</a></strong>
+            and
+            <strong><a href="https://github.com/Frozen-47" target="_blank" class="resume-link">GitHub</a></strong>
+            and don't forget to check out my
+            <strong><a href="#contact" class="resume-link">Resume!</a></strong>
+        </p>
+    </footer>
+
 </body>
+
 </html>
