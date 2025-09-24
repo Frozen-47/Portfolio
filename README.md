@@ -29,7 +29,7 @@ Mobile Apps | AI/ML Integration | Data Structures & Algorithms
 
 ## 📫 Contact
 
-- Email: [youremail@example.com](mailto:sabareeshgm47@gmail.com)  
+- Email: [Frozen Email](mailto:sabareeshgm47@gmail.com)  
 - LinkedIn: [Frozen LinkedIn](https://linkedin.com/in/sabareesh47)  
 - GitHub: [Frozen GitHub](https://github.com/Frozen-47)  
 
