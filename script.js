@@ -70,13 +70,20 @@ function toggleName() {
     isFrozen = !isFrozen;
 }
 
-// Auto toggle name every 4 seconds
-setInterval(toggleName, 4000);
+const observerOptions = { 
+    threshold: 0.1, 
+    rootMargin: "0px 0px -50px 0px" 
+};
 
-// Manual toggle on click
-if (heroName) heroName.addEventListener("click", toggleName);
+const observer = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, observerOptions);
 
-// Contact Modal Functions
 function openContactModal() {
     const modal = document.getElementById("contactModal");
     if (modal) {
@@ -93,9 +100,44 @@ function closeContactModal() {
     }
 }
 
-// DOM Content Loaded Event
+let statusIndex = 0;
+const statusMessages = [
+    "Available for work",
+    "Open to opportunities", 
+    "Ready to collaborate",
+    "Seeking new challenges",
+];
+
+function rotateStatusMessage() {
+    const statusTextElement = document.querySelector(".profile-subtitle");
+    if (statusTextElement) {
+        let textNode = null;
+        for (let child of statusTextElement.childNodes) {
+            if (child.nodeType === Node.TEXT_NODE) {
+                textNode = child;
+                break;
+            }
+        }
+        
+        if (!textNode) {
+            textNode = document.createTextNode("");
+            statusTextElement.insertBefore(textNode, statusTextElement.firstChild);
+        }
+        
+        statusIndex = (statusIndex + 1) % statusMessages.length;
+        textNode.textContent = statusMessages[statusIndex] + " ";
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
-    // Modal click outside to close
+    const contactMeBtn = document.querySelector('.contact-me');
+    if (contactMeBtn) {
+        contactMeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            openContactModal();
+        });
+    }
+    
     const contactModal = document.getElementById("contactModal");
     if (contactModal) {
         contactModal.addEventListener("click", function (e) {
@@ -103,17 +145,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Repo card hover effects
-    document.querySelectorAll(".repo-card").forEach((card) => {
-        card.addEventListener("mouseenter", function () {
-            this.style.boxShadow = "0 8px 32px rgba(88, 166, 255, 0.1)";
+    const modalClose = document.querySelector('.modal-close');
+    if (modalClose) {
+        modalClose.addEventListener('click', function(e) {
+            e.preventDefault();
+            closeContactModal();
         });
-        card.addEventListener("mouseleave", function () {
-            this.style.boxShadow = "none";
-        });
-    });
+    }
 
-    // Skill tag click effects
     document.querySelectorAll(".skill-tag").forEach((tag) => {
         tag.addEventListener("click", function () {
             this.style.transform = "scale(0.95)";
@@ -123,7 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Intersection observer for section animations
     document.querySelectorAll(".section").forEach((section) => {
         section.style.opacity = "0";
         section.style.transform = "translateY(20px)";
@@ -132,13 +170,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Keyboard shortcuts
+setInterval(toggleName, 4000);
+
+if (heroName) heroName.addEventListener("click", toggleName);
+
+setInterval(rotateStatusMessage, 5000);
+
 document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeContactModal();
-    if (e.key === "c" && e.ctrlKey) openContactModal();
+    if (e.key === "c" && e.ctrlKey) {
+        e.preventDefault();
+        openContactModal();
+    }
 });
 
-// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -152,55 +197,22 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
 });
 
-// Header background change on scroll
 window.addEventListener("scroll", function () {
     const header = document.querySelector(".header");
     if (header) {
-        header.style.background =
-            window.scrollY > 100 ? "rgba(1, 4, 9, 0.6)" : "rgba(1, 4, 9, 0.2)";
+        if (window.scrollY > 100) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
     }
 });
 
-// Intersection Observer for animations
-const observerOptions = { 
-    threshold: 0.1, 
-    rootMargin: "0px 0px -50px 0px" 
-};
-
-const observer = new IntersectionObserver(function (entries) {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
-    });
-}, observerOptions);
-
-// Status message rotation
-let statusIndex = 0;
-const statusMessages = [
-    "Available for work",
-    "Open to opportunities",
-    "Ready to collaborate",
-    "Seeking new challenges",
-];
-
-setInterval(() => {
-    const statusTextElement = document.querySelector(".profile-subtitle");
-    if (statusTextElement && statusTextElement.firstChild) {
-        statusIndex = (statusIndex + 1) % statusMessages.length;
-        statusTextElement.firstChild.textContent =
-            statusMessages[statusIndex] + " ";
-    }
-}, 5000);
-
-// Page load animation
 window.addEventListener("load", function () {
     document.body.style.opacity = "0";
     document.body.style.transition = "opacity 0.5s ease";
     setTimeout(() => (document.body.style.opacity = "1"), 100);
 
-    // Initialize hero name with letters
     if (heroName) {
         const text = heroName.textContent;
         heroName.innerHTML = "";
