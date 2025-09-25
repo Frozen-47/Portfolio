@@ -70,10 +70,13 @@ function toggleName() {
     isFrozen = !isFrozen;
 }
 
+// Auto toggle name every 4 seconds
 setInterval(toggleName, 4000);
 
+// Manual toggle on click
 if (heroName) heroName.addEventListener("click", toggleName);
 
+// Contact Modal Functions
 function openContactModal() {
     const modal = document.getElementById("contactModal");
     if (modal) {
@@ -90,7 +93,9 @@ function closeContactModal() {
     }
 }
 
+// DOM Content Loaded Event
 document.addEventListener("DOMContentLoaded", function () {
+    // Modal click outside to close
     const contactModal = document.getElementById("contactModal");
     if (contactModal) {
         contactModal.addEventListener("click", function (e) {
@@ -98,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Repo card hover effects
     document.querySelectorAll(".repo-card").forEach((card) => {
         card.addEventListener("mouseenter", function () {
             this.style.boxShadow = "0 8px 32px rgba(88, 166, 255, 0.1)";
@@ -107,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Skill tag click effects
     document.querySelectorAll(".skill-tag").forEach((tag) => {
         tag.addEventListener("click", function () {
             this.style.transform = "scale(0.95)";
@@ -116,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Intersection observer for section animations
     document.querySelectorAll(".section").forEach((section) => {
         section.style.opacity = "0";
         section.style.transform = "translateY(20px)";
@@ -124,19 +132,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Keyboard shortcuts
 document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeContactModal();
     if (e.key === "c" && e.ctrlKey) openContactModal();
 });
 
+// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute("href"));
-        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (target) {
+            target.scrollIntoView({ 
+                behavior: "smooth", 
+                block: "start" 
+            });
+        }
     });
 });
 
+// Header background change on scroll
 window.addEventListener("scroll", function () {
     const header = document.querySelector(".header");
     if (header) {
@@ -145,7 +161,12 @@ window.addEventListener("scroll", function () {
     }
 });
 
-const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+// Intersection Observer for animations
+const observerOptions = { 
+    threshold: 0.1, 
+    rootMargin: "0px 0px -50px 0px" 
+};
+
 const observer = new IntersectionObserver(function (entries) {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -155,6 +176,7 @@ const observer = new IntersectionObserver(function (entries) {
     });
 }, observerOptions);
 
+// Status message rotation
 let statusIndex = 0;
 const statusMessages = [
     "Available for work",
@@ -172,11 +194,13 @@ setInterval(() => {
     }
 }, 5000);
 
+// Page load animation
 window.addEventListener("load", function () {
     document.body.style.opacity = "0";
     document.body.style.transition = "opacity 0.5s ease";
     setTimeout(() => (document.body.style.opacity = "1"), 100);
 
+    // Initialize hero name with letters
     if (heroName) {
         const text = heroName.textContent;
         heroName.innerHTML = "";
