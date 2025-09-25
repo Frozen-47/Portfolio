@@ -16,6 +16,19 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    border: 2px solid #30363d;
+    border-radius: 12px;
+    animation: bodyEnter 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    opacity: 0;
+    transform: translateY(15px);
+    will-change: transform, opacity;
+}
+
+@keyframes bodyEnter {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Contact Modal */
@@ -217,9 +230,7 @@ body {
     transform: translateX(-50%);
     z-index: 100;
     width: calc(100% - 32px);
-    /* Matches body padding (16px * 2) */
     max-width: calc(1200px + 16px);
-    /* Matches main max-width + padding compensation */
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease;
 }
@@ -357,11 +368,28 @@ body {
     margin-left: auto;
     margin-right: auto;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-/* Hero Section - Left aligned */
+/* FIXED SECTIONS GRID - This is the main fix */
+.sections-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    align-items: start;
+    margin-bottom: 16px;
+}
+
+/* Projects Section - Full Width */
+.projects-section {
+    grid-column: 1 / -1;
+}
+
+/* Hero Section - Full width */
 .hero {
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     text-align: left;
 }
 
@@ -458,9 +486,25 @@ body {
     background: #1a7f37;
 }
 
-/* Section */
+/* Section - Fixed height consistency */
 .section {
-    margin-bottom: 28px;
+    background: rgba(13, 17, 23, 0.8);
+    border: 1px solid #21262d;
+    border-radius: 12px;
+    padding: 18px;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    height: auto;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section:hover {
+    border-color: #58a6ff;
+    background: rgba(13, 17, 23, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(88, 166, 255, 0.1);
 }
 
 .section-header {
@@ -469,6 +513,7 @@ body {
     margin-bottom: 12px;
     padding-bottom: 6px;
     border-bottom: 1px solid #21262d;
+    flex-shrink: 0;
 }
 
 .section-title {
@@ -642,9 +687,10 @@ body {
 
 /* Skills */
 .skills-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
 }
 
 .skill-category h3 {
@@ -678,6 +724,7 @@ body {
 /* Goals */
 .goals-list {
     list-style: none;
+    flex: 1;
 }
 
 .goal-item {
@@ -706,8 +753,19 @@ body {
 /* Contact */
 .contact-section {
     text-align: center;
-    padding: 24px 0;
-    margin-top: 20px;
+    padding: 18px 16px;
+    background: rgba(13, 17, 23, 0.8);
+    border: 1px solid #21262d;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.contact-section:hover {
+    border-color: #58a6ff;
+    background: rgba(13, 17, 23, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(88, 166, 255, 0.1);
 }
 
 .contact-title {
@@ -800,7 +858,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* Social Media Icons */
 .social-icon {
     width: 16px;
     height: 16px;
@@ -813,7 +870,6 @@ body {
     filter: brightness(0) saturate(100%) invert(64%) sepia(76%) saturate(4681%) hue-rotate(205deg) brightness(99%) contrast(101%);
 }
 
-/* Fallback for text icons when no image */
 .social-text {
     font-size: 14px;
     font-weight: 600;
@@ -837,7 +893,6 @@ body {
     font-size: 11px;
 }
 
-/* Resume Link */
 .resume-link {
     color: #58a6ff;
     text-decoration: none;
@@ -848,16 +903,52 @@ body {
     text-decoration: underline;
 }
 
-/* Responsive */
+/* Typewriter Animation */
+.name-letter {
+    opacity: 1;
+    transition: opacity 0.1s ease;
+    display: inline-block;
+}
+
+.typewriter-cursor {
+    opacity: 1;
+    animation: blink 1s infinite;
+    color: #fff;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+.name-letter.removing {
+    opacity: 0;
+}
+
+.name-letter.adding {
+    opacity: 0;
+}
+
+.name-letter.visible {
+    opacity: 1;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     body {
         padding: 8px;
+        border-width: 1px;
+        border-radius: 8px;
     }
 
     .header {
         top: 8px;
         width: calc(100% - 16px);
-        /* Adjust for smaller body padding */
         max-width: calc(1200px + 8px);
         padding: 8px 20px;
         border-radius: 40px;
@@ -890,6 +981,13 @@ body {
     .main {
         margin-top: 54px;
         padding: 16px 4px;
+        gap: 16px;
+    }
+
+    /* FIXED: Single column on mobile */
+    .sections-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .hero h1 {
@@ -911,11 +1009,6 @@ body {
     .timeline-header {
         flex-direction: column;
         align-items: flex-start;
-    }
-
-    .skills-section {
-        grid-template-columns: 1fr;
-        gap: 16px;
     }
 
     .contact-links {
@@ -946,16 +1039,8 @@ body {
         padding: 20px;
     }
 
-    .section {
-        margin-bottom: 20px;
-    }
-
-    .hero {
-        margin-bottom: 24px;
-    }
-
     .contact-section {
-        padding: 16px 0;
+        padding: 16px;
     }
 
     .footer {
@@ -981,52 +1066,6 @@ body {
     }
 
     .section {
-        margin-bottom: 16px;
+        padding: 12px;
     }
-}
-
-.name-letter {
-    opacity: 1;
-    transition: opacity 0.1s ease;
-    display: inline-block;
-}
-
-.typewriter-cursor {
-    opacity: 1;
-    animation: blink 1s infinite;
-    color: #fff;
-    font-weight: bold;
-}
-
-@keyframes blink {
-
-    0%,
-    50% {
-        opacity: 1;
-    }
-
-    51%,
-    100% {
-        opacity: 0;
-    }
-}
-
-.name-letter.removing {
-    opacity: 0;
-}
-
-.name-letter.adding {
-    opacity: 0;
-}
-
-.name-letter.visible {
-    opacity: 1;
-}
-
-.section+.section {
-    margin-top: 0;
-}
-
-.main .section:last-of-type {
-    margin-bottom: 16px;
 }
