@@ -31,22 +31,24 @@ body {
     }
 }
 
-/* Contact Modal */
 .contact-modal {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     z-index: 1000;
     animation: fadeIn 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .contact-modal.show {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
 }
@@ -57,9 +59,13 @@ body {
     border-radius: 12px;
     padding: 24px;
     max-width: 450px;
-    width: 90%;
+    width: 100%;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
     position: relative;
     animation: slideIn 0.3s ease;
+    margin: auto;
+    min-width: 280px;
 }
 
 .modal-close {
@@ -198,7 +204,6 @@ body {
     from {
         opacity: 0;
     }
-
     to {
         opacity: 1;
     }
@@ -209,30 +214,33 @@ body {
         opacity: 0;
         transform: translateY(-20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Header - Fixed to match body width */
 .header {
-    background: rgba(1, 4, 9, 0.2);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    border-radius: 50px;
+    background: rgba(1, 4, 9, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
     padding: 10px 24px;
-    position: fixed;
+    position: sticky;
     top: 16px;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 100;
-    width: calc(100% - 32px);
-    max-width: calc(1200px + 16px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s ease;
+    width: calc(100% - 16px);
+    max-width: 1200px;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    background: rgba(1, 4, 9, 0.95);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 .header-container {
@@ -314,14 +322,12 @@ body {
 }
 
 @keyframes pulse-dots {
-
     0%,
     80%,
     100% {
         opacity: 0.3;
         transform: scale(1);
     }
-
     40% {
         opacity: 1;
         transform: scale(1.2);
@@ -360,9 +366,7 @@ body {
     filter: brightness(0) saturate(100%) invert(94%) sepia(6%) saturate(201%) hue-rotate(203deg) brightness(103%) contrast(96%);
 }
 
-/* Main Content */
 .main {
-    margin-top: 64px;
     padding: 20px 8px;
     max-width: 1200px;
     margin-left: auto;
@@ -373,7 +377,6 @@ body {
     gap: 16px;
 }
 
-/* FIXED SECTIONS GRID - This is the main fix */
 .sections-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -382,12 +385,10 @@ body {
     margin-bottom: 16px;
 }
 
-/* Projects Section - Full Width */
 .projects-section {
     grid-column: 1 / -1;
 }
 
-/* Hero Section - Full width */
 .hero {
     margin-bottom: 16px;
     text-align: left;
@@ -424,7 +425,6 @@ body {
     transform: scale(1.1);
 }
 
-/* Letter animation styles */
 .name-letter {
     display: inline-block;
     opacity: 1;
@@ -486,7 +486,6 @@ body {
     background: #1a7f37;
 }
 
-/* Section - Fixed height consistency */
 .section {
     background: rgba(13, 17, 23, 0.8);
     border: 1px solid #21262d;
@@ -544,7 +543,6 @@ body {
     text-decoration: underline;
 }
 
-/* Projects Grid */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -562,6 +560,7 @@ body {
 .repo-card:hover {
     border-color: #30363d;
     transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(88, 166, 255, 0.1);
 }
 
 .repo-name {
@@ -632,7 +631,6 @@ body {
     text-decoration: underline;
 }
 
-/* Timeline */
 .timeline {
     list-style: none;
 }
@@ -685,7 +683,6 @@ body {
     line-height: 1.4;
 }
 
-/* Skills */
 .skills-section {
     display: flex;
     flex-direction: column;
@@ -714,6 +711,7 @@ body {
     font-size: 11px;
     border: 1px solid #30363d;
     transition: all 0.2s ease;
+    cursor: pointer;
 }
 
 .skill-tag:hover {
@@ -721,7 +719,6 @@ body {
     border-color: #58a6ff;
 }
 
-/* Goals */
 .goals-list {
     list-style: none;
     flex: 1;
@@ -750,7 +747,6 @@ body {
     line-height: 1.4;
 }
 
-/* Contact */
 .contact-section {
     text-align: center;
     padding: 18px 16px;
@@ -807,6 +803,7 @@ body {
     display: flex;
     align-items: center;
     gap: 6px;
+    cursor: pointer;
 }
 
 .contact-link:hover {
@@ -822,7 +819,6 @@ body {
     filter: brightness(0) saturate(100%) invert(64%) sepia(76%) saturate(4681%) hue-rotate(205deg) brightness(99%) contrast(101%);
 }
 
-/* Social Media Icons */
 .social-icons {
     list-style: none;
     display: flex;
@@ -880,7 +876,6 @@ body {
     color: #58a6ff;
 }
 
-/* Footer */
 .footer {
     margin-top: auto;
     padding: 20px 8px;
@@ -903,13 +898,6 @@ body {
     text-decoration: underline;
 }
 
-/* Typewriter Animation */
-.name-letter {
-    opacity: 1;
-    transition: opacity 0.1s ease;
-    display: inline-block;
-}
-
 .typewriter-cursor {
     opacity: 1;
     animation: blink 1s infinite;
@@ -926,19 +914,6 @@ body {
     }
 }
 
-.name-letter.removing {
-    opacity: 0;
-}
-
-.name-letter.adding {
-    opacity: 0;
-}
-
-.name-letter.visible {
-    opacity: 1;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
     body {
         padding: 8px;
@@ -949,13 +924,15 @@ body {
     .header {
         top: 8px;
         width: calc(100% - 16px);
-        max-width: calc(1200px + 8px);
+        max-width: 1200px;
         padding: 8px 20px;
-        border-radius: 40px;
+        border-radius: 12px;
+        margin-bottom: 16px;
     }
 
     .header-container {
         min-height: 32px;
+        max-width: 1200px;
     }
 
     .avatar {
@@ -979,12 +956,10 @@ body {
     }
 
     .main {
-        margin-top: 54px;
         padding: 16px 4px;
         gap: 16px;
     }
 
-    /* FIXED: Single column on mobile */
     .sections-grid {
         grid-template-columns: 1fr;
         gap: 16px;
@@ -1034,8 +1009,15 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .contact-modal {
+        padding: 20px;
+    }
+
     .modal-content {
-        margin: 16px;
+        width: calc(100% - 40px);
+        max-width: 400px;
+        max-height: calc(100vh - 40px);
+        margin: 0;
         padding: 20px;
     }
 
@@ -1050,7 +1032,7 @@ body {
 
 @media (max-width: 480px) {
     .main {
-        padding: 12px 2px;
+        padding: 15px;
     }
 
     .hero h1 {
@@ -1067,5 +1049,16 @@ body {
 
     .section {
         padding: 12px;
+    }
+
+    .contact-modal {
+        padding: 15px;
+    }
+    
+    .modal-content {
+        width: calc(100% - 30px);
+        max-width: 350px;
+        max-height: calc(100vh - 30px);
+        padding: 18px;
     }
 }
