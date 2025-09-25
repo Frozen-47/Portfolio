@@ -11,8 +11,6 @@
     <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/174297688?s=400&u=508e39659f0b8caea9123ef919370168414f7e28&v=4" />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
-
-    
 </head>
 
 <body>
@@ -54,6 +52,7 @@
                     <a href="https://x.com/frozenn_47" class="other-contact-btn" target="_blank">
                         <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" alt="X"
                             class="other-contact-btn-icon" />
+                        X
                     </a>
                 </div>
             </div>
@@ -78,8 +77,7 @@
                 </div>
             </div>
             <button class="contact-me" onclick="openContactModal()">
-                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mail.svg" alt="Contact"
-                    class="contact-me-icon" />
+               
                 Contact Me
             </button>
         </div>
@@ -87,10 +85,10 @@
 
     <!-- Main Content -->
     <main class="main">
-        <!-- Hero Section -->
+        <!-- Hero Section - Full Width -->
         <section class="hero">
             <h1>
-                Hi there! I’m <span class="name frozen" id="heroName">Frozen</span> ✨
+                Hi there! I'm <span class="name frozen" id="heroName">Frozen</span> ✨
             </h1>
             <p class="subtitle">Computer Science Student</p>
             <p class="description">
@@ -109,36 +107,96 @@
             </div>
         </section>
 
-        <!-- Learning Section -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Currently Learning</h2>
-            </div>
-
-            <div class="skills-section">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                    </div>
+        <!-- Grid Container for Sections -->
+        <div class="sections-grid">
+            <!-- Learning Section -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Currently Learning</h2>
                 </div>
 
-                <div class="skill-category">
-                    <h3>Core Concepts</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Data Structures</span>
-                        <span class="skill-tag">Algorithms</span>
-                        <span class="skill-tag">Problem Solving</span>
+                <div class="skills-section">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Core Concepts</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Data Structures</span>
+                            <span class="skill-tag">Algorithms</span>
+                            <span class="skill-tag">Problem Solving</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Popular Projects -->
-        <section class="section">
+            <!-- Achievements -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Achievements</h2>
+                </div>
+
+                <ul class="goals-list">
+                    <li class="goal-item">
+                        <span class="goal-emoji">🏆</span>
+                        <span class="goal-text">Microsoft Office Tour 2024 Participant</span>
+                    </li>
+                    <li class="goal-item">
+                        <span class="goal-emoji">✅</span>
+                        <span class="goal-text">8 Microsoft Certifications Completed</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Goals -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">My Goals</h2>
+                </div>
+
+                <ul class="goals-list">
+                    <li class="goal-item">
+                        <span class="goal-text">Master Java programming and object-oriented design
+                            principles</span>
+                    </li>
+                    <li class="goal-item">
+                        <span class="goal-text">Build a strong foundation in Java & C++ for competitive
+                            programming and systems development</span>
+                    </li>
+                    <li class="goal-item">
+                        <span class="goal-text">Land an internship or Zoho opportunity in software
+                            development</span>
+                    </li>
+                    <li class="goal-item">
+                        <span class="goal-text">Finish 10+ tech certifications in 2025 across multiple
+                            domains</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Exploring Opportunities -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Exploring Opportunities</h2>
+                </div>
+
+                <p style="color: #8d96a0; font-size: 13px; line-height: 1.4">
+                    I'm actively researching and working on open source projects, while
+                    exploring internships, job opportunities, and anything that helps me
+                    grow as a developer.
+                </p>
+            </section>
+        </div>
+
+        <!-- Projects Section - Full Width -->
+        <section class="section projects-section">
             <div class="section-header">
                 <h2 class="section-title">Mini Projects</h2>
                 <span class="section-count">3</span>
@@ -223,63 +281,6 @@
                     </div>
                 </article>
             </div>
-        </section>
-
-        <!-- Achievements -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Achievements</h2>
-            </div>
-
-            <ul class="goals-list">
-                <li class="goal-item">
-                    <span class="goal-emoji">🏆</span>
-                    <span class="goal-text">Microsoft Office Tour 2024 Participant</span>
-                </li>
-                <li class="goal-item">
-                    <span class="goal-emoji">✅</span>
-                    <span class="goal-text">8 Microsoft Certifications Completed</span>
-                </li>
-            </ul>
-        </section>
-
-        <!-- Goals -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">My Goals</h2>
-            </div>
-
-            <ul class="goals-list">
-                <li class="goal-item">
-                    <span class="goal-text">Master Java programming and object-oriented design
-                        principles</span>
-                </li>
-                <li class="goal-item">
-                    <span class="goal-text">Build a strong foundation in Java & C++ for competitive
-                        programming and systems development</span>
-                </li>
-                <li class="goal-item">
-                    <span class="goal-text">Land an internship or Zoho opportunity in software
-                        development</span>
-                </li>
-                <li class="goal-item">
-                    <span class="goal-text">Finish 10+ tech certifications in 2025 across multiple
-                        domains</span>
-                </li>
-            </ul>
-        </section>
-
-        <!-- Exploring Opportunities -->
-        <section class="section">
-            <div class="section-header">
-                <h2 class="section-title">Exploring Opportunities</h2>
-            </div>
-
-            <p style="color: #8d96a0; font-size: 13px; line-height: 1.4">
-                I'm actively researching and working on open source projects, while
-                exploring internships, job opportunities, and anything that helps me
-                grow as a developer.
-            </p>
         </section>
 
         <!-- Contact -->
